@@ -1,0 +1,191 @@
+body {
+  margin: 0;
+  height: 100%;
+  background: #000; }
+
+@font-face {
+  font-family: "Klavika Bd";
+  src: url("../fonts/klavika-bold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Klavika Lt";
+  src: url("../fonts/klavika-light-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Klavika Md";
+  src: url("../fonts/klavika-medium-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Klavika Rg";
+  src: url("../fonts/klavika-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative; }
+  .container .background {
+    height: 100%;
+    position: absolute;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s; }
+  .container .msg {
+    position: absolute;
+    color: #fff;
+    font-family: "Klavika Rg";
+    font-size: 40px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    max-width: 350px;
+    top: 39%;
+    margin-left: 100px; }
+    .container .msg.order-0 {
+      top: 0;
+      margin: 20px;
+      height: 100%;
+      position: relative;
+      max-width: 100%; }
+      .container .msg.order-0 .top-text {
+        max-width: 350px; }
+      .container .msg.order-0 .bottom-text {
+        max-width: 100%;
+        font-size: 13px;
+        text-transform: none;
+        text-decoration: none;
+        bottom: 20%;
+        position: absolute; }
+    .container .msg.last {
+      right: 5%;
+      top: 0;
+      font-size: 25px;
+      height: 100%;
+      width: 100%;
+      text-decoration: none;
+      text-transform: none; }
+      .container .msg.last .last-message {
+        position: relative;
+        height: 100%; }
+        .container .msg.last .last-message div {
+          position: relative;
+          text-align: right; }
+        .container .msg.last .last-message a {
+          color: #fff; }
+        .container .msg.last .last-message .monk-title {
+          top: 3%;
+          text-transform: uppercase;
+          text-decoration: underline;
+          font-size: 40px; }
+        .container .msg.last .last-message .join-us {
+          top: 40%;
+          font-size: 14px; }
+        .container .msg.last .last-message .social {
+          top: 50%;
+          font-size: 14px; }
+          .container .msg.last .last-message .social a {
+            text-decoration: none; }
+            .container .msg.last .last-message .social a span {
+              margin-left: 10px;
+              padding-right: 10px; }
+  .container .navigation {
+    position: absolute;
+    bottom: 5%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px; }
+    .container .navigation li {
+      border: dotted #fff;
+      border-left: none;
+      color: #fff;
+      height: 18px;
+      width: 20px;
+      font-size: 10px;
+      font-family: "Klavika Rg";
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer; }
+      .container .navigation li:first-child {
+        border-left: dotted #fff; }
+      .container .navigation li span {
+        width: 21px;
+        height: 23px;
+        padding-top: 11px; }
+      .container .navigation li.selected span {
+        display: none; }
+      .container .navigation li.selected::after {
+        content: "1";
+        display: inline;
+        width: 16px;
+        background-color: white; }
+  .container .arrow {
+    background-image: url("../img/arrow.png");
+    background-size: contain;
+    position: absolute;
+    height: 38px;
+    width: 29px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    top: 40%; }
+    .container .arrow.next {
+      right: 2%; }
+    .container .arrow.prev {
+      left: 14px;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1); }
+  .container .hidden {
+    opacity: 0;
+    transition: opacity 1000ms; }
+  .container .show {
+    opacity: 1;
+    transition: opacity 1000ms; }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?i7reyu");
+  src: url("../fonts/icomoon.eot?i7reyu#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?i7reyu") format("truetype"), url("../fonts/icomoon.woff?i7reyu") format("woff"), url("../fonts/icomoon.svg?i7reyu#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-twitter:before {
+  content: "\e903"; }
+
+.icon-email:before {
+  content: "\e900"; }
+
+.icon-facebook:before {
+  content: "\e901"; }
+
+.icon-logo:before {
+  content: "\e902"; }

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaMonks</title>
+    <link rel="stylesheet" href="./css/main.css">
+    
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <img class="background" src="./img/background.jpg" alt="">
+            <div class="msg order-0 first">
+                <div class="top-text">
+                    we are breaking our wow of silence
+                </div>
+                <div class="bottom-text">
+                    <div>In January 2011, after a decade of digital, we opened the doors to our temple</div>
+                    <div>Follow our noble eightfold path to digital enlighterment here.</div>
+                </div>
+            </div>
+            <div class="msg order-1 hidden">talent is given true skill is earned</div>
+            <div class="msg order-2 hidden">be flexible to change and sturdy in conviction</div>
+            <div class="msg order-3 hidden">use many skills yet work as one</div>
+            <div class="msg order-4 hidden">to master anything find interest in evertything</div>
+            <div class="msg order-5 hidden">individual flourish if culture and wisdom are shared</div>
+            <div class="msg order-6 hidden">train for perfection but aim for more</div>
+            <div class="msg order-7 hidden">take pride in your work but do not seek praise</div>
+            <div class="msg order-8 hidden">temporary sacrifice brings lasting results</div>
+            <div class="msg order-9 hidden last">
+                <div class="last-message">
+                    <div class="monk-title">become a monk</div>
+                    <div class="join-us">
+                        <div>Interested in joining our monastery?</div>
+                        <div> Check out our current openings on <a href="//mediamonks.com/careers">mediamonks.com/careers</a></div>
+                        
+                    </div>
+                    <div class="social">
+                        <a href="mailto:pr@mediamonks.com"><span class="icon-email"></span>Mail ons</a>
+                        <a href="https://www.facebook.com/mediamonks" target="_blank">
+                            <span class="icon-facebook"></span>Facebook
+                        </a>
+                        <a href="https://twitter.com/MediaMonks" target="_blank">
+                            <span class="icon-twitter"></span>Twitter
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="navigation">
+                <li data-option="0" class="selected"><span>&nbsp;</span></li>
+                <li data-option="1"><span>1</span></li>
+                <li data-option="2"><span>2</span></li>
+                <li data-option="3"><span>3</span></li>
+                <li data-option="4"><span>4</span></li>
+                <li data-option="5"><span>5</span></li>
+                <li data-option="6"><span>6</span></li>
+                <li data-option="7"><span>7</span></li>
+                <li data-option="8"><span>8</span></li>
+                <li data-option="9"><span>&nbsp;</span></li>
+            </ul>
+
+
+
+            <div class="arrow next"></div>
+            <div class="arrow prev hidden"></div>
+        </div>
+
+    </div>
+    <script>
+        const arrowNext = document.querySelector('.arrow.next');
+        const arrowPrev = document.querySelector('.arrow.prev');
+        const navigation = document.querySelector('.navigation');
+        const background = document.querySelector('.background');
+
+        let slidePosition = 0;
+        let moving = false;
+
+        navigation.addEventListener('click', e => {
+            let optionElement = e.target;
+            let parentElement = optionElement.parentElement
+            if(optionElement && optionElement.nodeName == "SPAN") {
+                if(!moving){
+                    moving = true;
+                    const option = Number(parentElement.dataset.option);
+                    if(option !== slidePosition){
+                        markAsSelected(parentElement)
+                        slidePosition = option;
+                        moveSliderTo(option);
+                    }
+                }               
+            }
+        });
+
+        arrowNext.addEventListener('click', event => {
+            if(!moving) {
+                moving = true;
+                slidePosition++;
+                moveSliderTo(slidePosition);
+            }
+        });
+
+        arrowPrev.addEventListener('click', event => {
+            if(!moving) {
+                moving = true;
+                slidePosition--;
+                moveSliderTo(slidePosition);    
+            }
+        });
+
+        function markAsSelected(element) {
+            //unselect all
+            document.querySelectorAll('.navigation li').forEach(option => {
+                option.classList.remove('selected');
+            });
+            element.classList.add('selected')
+        }
+
+        function moveSliderTo(position){
+            const currentSlide = document.querySelector('.msg.order-'+position);
+
+
+            markAsSelected(document.querySelectorAll('.navigation li')[position])
+           
+            //show or hide first or last arrow
+            showOrHideArrow(position);
+
+            //hide all
+            document.querySelectorAll('.msg').forEach(slide => {
+                slide.classList.add('hidden');
+                slide.classList.remove('show');
+            });
+
+            //move slide
+            let marginleft = getMarginForPosition(position);
+            background.style.marginLeft='-'+marginleft+'vw';
+
+            //show slide
+            setTimeout(() => {
+                show(currentSlide)
+                moving = false;
+            }, 1200);
+            
+        }
+
+        function showOrHideArrow(position) {
+            if (position < 9 && !arrowNext.classList.contains('show')) {
+                show(arrowNext);
+            } else if (position === 9) {
+                hide(arrowNext);
+            }
+
+            if (position > 0 && !arrowPrev.classList.contains('show')) {
+               show(arrowPrev);
+            } else if (position === 0) {
+                hide(arrowPrev);
+            }
+        }
+ 
+        function getMarginForPosition(sliderPosition) {
+            let marginLeft = 0;
+            switch (sliderPosition) {
+                case 1:
+                    marginLeft = 55;
+                    break;
+                case 2:
+                    marginLeft = 110;
+                    break;
+                case 3:
+                    marginLeft = 165;
+                    break;
+                case 4:
+                    marginLeft = 220;
+                    break;
+                case 5:
+                    marginLeft = 280;
+                    break;
+                case 6:
+                    marginLeft = 390;
+                    break;
+                case 7:
+                    marginLeft = 450;
+                    break;
+                case 8:
+                    marginLeft = 450;
+                    break;
+                case 9:
+                    marginLeft = 520;
+                    break;
+                default:
+                    break;
+            }
+            return marginLeft
+        }
+
+        function hide(element) {
+            element.classList.remove('show');
+            element.classList.add('hidden');
+        }
+        
+        function show(element) {
+            element.classList.remove('hidden');
+            element.classList.add('show');
+        }
+
+    </script>
+</body>
+</html>

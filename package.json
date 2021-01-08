@@ -1,0 +1,17 @@
+{
+  "name": "mediamonksslider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "install": "^0.13.0",
+    "node-sass": "^5.0.0",
+    "npm": "^6.14.10"
+  }
+}
