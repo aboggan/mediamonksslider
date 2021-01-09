@@ -31,132 +31,6 @@ body {
   font-style: normal;
   font-display: swap; }
 
-.container {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative; }
-  .container .background {
-    height: 100%;
-    position: absolute;
-    -webkit-transition: 1s;
-    -moz-transition: 1s;
-    -ms-transition: 1s;
-    -o-transition: 1s;
-    transition: 1s; }
-  .container .msg {
-    position: absolute;
-    color: #fff;
-    font-family: "Klavika Rg";
-    font-size: 40px;
-    text-decoration: underline;
-    text-transform: uppercase;
-    max-width: 350px;
-    top: 39%;
-    margin-left: 100px; }
-    .container .msg.order-0 {
-      top: 0;
-      margin: 20px;
-      height: 100%;
-      position: relative;
-      max-width: 100%; }
-      .container .msg.order-0 .top-text {
-        max-width: 350px; }
-      .container .msg.order-0 .bottom-text {
-        max-width: 100%;
-        font-size: 13px;
-        text-transform: none;
-        text-decoration: none;
-        bottom: 20%;
-        position: absolute; }
-    .container .msg.last {
-      right: 5%;
-      top: 0;
-      font-size: 25px;
-      height: 100%;
-      width: 100%;
-      text-decoration: none;
-      text-transform: none; }
-      .container .msg.last .last-message {
-        position: relative;
-        height: 100%; }
-        .container .msg.last .last-message div {
-          position: relative;
-          text-align: right; }
-        .container .msg.last .last-message a {
-          color: #fff; }
-        .container .msg.last .last-message .monk-title {
-          top: 3%;
-          text-transform: uppercase;
-          text-decoration: underline;
-          font-size: 40px; }
-        .container .msg.last .last-message .join-us {
-          top: 40%;
-          font-size: 14px; }
-        .container .msg.last .last-message .social {
-          top: 50%;
-          font-size: 14px; }
-          .container .msg.last .last-message .social a {
-            text-decoration: none; }
-            .container .msg.last .last-message .social a span {
-              margin-left: 10px;
-              padding-right: 10px; }
-  .container .navigation {
-    position: absolute;
-    bottom: 5%;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 20px; }
-    .container .navigation li {
-      border: 0.5px dotted #fff;
-      border-left: none;
-      color: #fff;
-      height: 18px;
-      width: 20px;
-      font-size: 10px;
-      font-family: "Klavika Rg";
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer; }
-      .container .navigation li:first-child {
-        border-left: 0.5px dotted #fff; }
-      .container .navigation li span {
-        width: 21px;
-        height: 23px;
-        padding-top: 11px; }
-      .container .navigation li.selected span {
-        display: none; }
-      .container .navigation li.selected::after {
-        content: "1";
-        display: inline;
-        width: 16px;
-        background-color: white; }
-  .container .arrow {
-    background-image: url("../img/arrow.png");
-    background-size: contain;
-    position: absolute;
-    height: 38px;
-    width: 29px;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    top: 40%; }
-    .container .arrow.next {
-      right: 2%; }
-    .container .arrow.prev {
-      left: 14px;
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1); }
-  .container .hidden {
-    opacity: 0;
-    transition: opacity 1000ms; }
-  .container .show {
-    opacity: 1;
-    transition: opacity 1000ms; }
-
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot?i7reyu");
@@ -189,3 +63,219 @@ body {
 
 .icon-logo:before {
   content: "\e902"; }
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative; }
+  .container .background {
+    height: 100%;
+    position: absolute;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s; }
+  .container .msg {
+    position: absolute;
+    color: #fff;
+    font-family: 'Klavika Rg';
+    font-size: 38px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    max-width: 360px;
+    top: 38%; }
+    @media only screen and (max-width: 440px) {
+      .container .msg {
+        font-size: 24px;
+        top: 20%;
+        max-width: 100%;
+        text-decoration: none;
+        background-color: rgba(0, 0, 0, 0.5); }
+        .container .msg.order-0 {
+          background-color: unset; } }
+    .container .msg.order-0 {
+      top: 0;
+      margin: 20px;
+      height: 100%;
+      position: relative;
+      max-width: 100%; }
+      .container .msg.order-0 .top-text {
+        max-width: 350px; }
+      .container .msg.order-0 .bottom-text {
+        max-width: 100%;
+        font-size: 11px;
+        text-transform: none;
+        text-decoration: none;
+        bottom: 14%;
+        position: absolute; }
+        @media only screen and (max-width: 440px) {
+          .container .msg.order-0 .bottom-text {
+            bottom: 20%; } }
+    .container .msg.last {
+      right: 5%;
+      top: 0;
+      font-size: 25px;
+      height: 100%;
+      width: 100%;
+      text-decoration: none;
+      text-transform: none; }
+      .container .msg.last .last-message {
+        position: relative;
+        height: 100%; }
+        .container .msg.last .last-message div {
+          position: relative;
+          text-align: right; }
+        .container .msg.last .last-message a {
+          color: #fff; }
+        .container .msg.last .last-message .monk-title {
+          top: 3%;
+          text-transform: uppercase;
+          text-decoration: underline;
+          font-size: 40px; }
+        .container .msg.last .last-message .join-us {
+          top: 40%;
+          font-size: 14px; }
+        .container .msg.last .last-message .social {
+          top: 50%;
+          font-size: 14px; }
+          .container .msg.last .last-message .social a {
+            text-decoration: none; }
+            .container .msg.last .last-message .social a span {
+              margin-left: 10px;
+              padding-right: 10px; }
+    .container .msg.align-left {
+      margin-left: 100px; }
+    .container .msg.align-right {
+      right: 5%;
+      text-align: right; }
+    @media only screen and (max-width: 440px) {
+      .container .msg.align-left, .container .msg.align-right {
+        margin-left: 0 !important;
+        right: unset;
+        text-align: center; } }
+  .container .navigation {
+    position: absolute;
+    bottom: 2%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px; }
+    @media only screen and (max-width: 440px) {
+      .container .navigation {
+        bottom: 60px; } }
+    .container .navigation li {
+      border: 0.5px dotted #fff;
+      border-left: none;
+      color: #fff;
+      height: 18px;
+      width: 20px;
+      font-size: 10px;
+      font-family: "Klavika Rg";
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer; }
+      .container .navigation li:first-child {
+        border-left: 0.5px dotted #fff; }
+      .container .navigation li span {
+        width: 21px;
+        height: 23px;
+        padding-top: 11px; }
+      .container .navigation li.selected span {
+        display: none; }
+      .container .navigation li.selected::after {
+        content: "1";
+        display: inline;
+        width: 16px;
+        background-color: white; }
+    .container .navigation .steps {
+      font-family: 'Klavika Lt';
+      color: #fff;
+      margin-left: 20px;
+      font-size: 11px; }
+  .container .arrow {
+    background-image: url("../img/arrow.png");
+    background-size: contain;
+    position: absolute;
+    opacity: 0.6;
+    height: 38px;
+    width: 29px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    top: 40%; }
+    @media only screen and (max-width: 440px) {
+      .container .arrow {
+        top: 50%; } }
+    .container .arrow.next {
+      right: 2%; }
+    .container .arrow.prev {
+      left: 14px;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1); }
+    .container .arrow.show {
+      opacity: 0.6; }
+    .container .arrow:hover {
+      opacity: 1; }
+  .container .logo {
+    position: absolute;
+    right: 2%;
+    bottom: 1%;
+    color: #fff;
+    font-size: 4vw; }
+    @media only screen and (max-width: 440px) {
+      .container .logo {
+        font-size: 40px;
+        bottom: 10px; } }
+
+.hidden {
+  opacity: 0;
+  transition: opacity 1000ms; }
+
+.show {
+  opacity: 1;
+  transition: opacity 1000ms; }
+
+.hide {
+  display: none; }
+
+.monk .text {
+  color: #fff;
+  font-family: 'Klavika Rg';
+  font-size: 30px;
+  text-align: center; }
+
+.monk .ml2 .letter {
+  display: inline-block;
+  line-height: 1em; }
+
+.monk .stage {
+  display: flex;
+  height: 330px;
+  width: 100%; }
+
+.monk .box {
+  align-self: flex-end;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  background-image: url("../img/monk.png");
+  background-repeat: no-repeat;
+  height: 200px;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+  width: 200px; }
+
+.monk .bounce-1 {
+  animation-name: bounce-1;
+  animation-timing-function: linear; }
+
+@keyframes bounce-1 {
+  0% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(-10px); }
+  100% {
+    transform: translateY(0); } }

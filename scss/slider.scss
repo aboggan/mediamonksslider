@@ -16,13 +16,22 @@
     .msg {
         position: absolute;
         color: #fff;
-        font-family: $klavika-reg;
-        font-size: 40px;
+        font-family: 'Klavika Rg';
+        font-size: 38px;
         text-decoration: underline;
         text-transform: uppercase;
-        max-width: 350px;
-        top: 39%;
-        margin-left: 100px;
+        max-width: 360px;
+        top: 38%;
+        @media only screen and (max-width: 440px) {
+            font-size: 24px;
+            top: 20%;
+            max-width: 100%;
+            text-decoration: none;
+            background-color: rgba(0,0,0,0.5);
+            &.order-0 {
+                background-color: unset;
+            }
+        }
         &.order-0 {
             top: 0;
             margin: 20px;
@@ -34,11 +43,14 @@
             }
             .bottom-text {
                 max-width: 100%;
-                font-size: 13px;
+                font-size: 11px;
                 text-transform: none;
                 text-decoration: none;
-                bottom: 20%;
+                bottom: 14%;
                 position: absolute;
+                @media only screen and (max-width: 440px) {
+                    bottom: 20%;
+                }
             }
         }
         &.last {
@@ -85,16 +97,34 @@
 
 
         }
+        &.align-left {
+            margin-left: 100px;
+            
+        }
+        &.align-right {
+            right: 5%;
+            text-align: right;
+        }
+        @media only screen and (max-width: 440px) {
+            &.align-left, &.align-right {
+                margin-left: 0 !important;
+                right: unset;
+                text-align: center;
+            }
+        }
 
     }
     .navigation {
         position: absolute;
-        bottom: 5%;
+        bottom: 2%;
         list-style: none;
         display: flex;
         align-items: center;
         justify-content: center;
         padding-left: 20px;
+        @media only screen and (max-width: 440px) {
+            bottom: 60px;
+        }
         li {
             border:0.5px dotted #fff;
             border-left: none;
@@ -129,17 +159,27 @@
                 }
             }
         }
+
+        .steps {
+            font-family: 'Klavika Lt';
+            color: #fff;
+            margin-left: 20px;
+            font-size: 11px;
+        }
     }
     .arrow {
         background-image: url("../img/arrow.png");
         background-size: contain;
         position: absolute;
-        
+        opacity: 0.6;
         height: 38px; 
         width: 29px;
         background-repeat: no-repeat;
         cursor: pointer;
         top: 40%;
+        @media only screen and (max-width: 440px) {
+            top: 50%;
+        }
         &.next {
             right: 2%;
         }
@@ -148,14 +188,36 @@
             -webkit-transform: scaleX(-1);
             transform: scaleX(-1);
         }
+        &.show {
+            opacity: 0.6;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .logo {
+        position: absolute;
+        right: 2%;
+        bottom: 1%;
+        color: #fff;
+        font-size: 4vw;
+        @media only screen and (max-width: 440px) {
+            font-size: 40px;
+            bottom: 10px;
+        }
     }
     
-    .hidden {
-        opacity: 0;
-        transition: opacity 1000ms;
-    }
-    .show {
-        opacity: 1;
-        transition: opacity 1000ms;
-    }
 }
+.hidden {
+    opacity: 0;
+    transition: opacity 1000ms;
+}
+.show {
+    opacity: 1;
+    transition: opacity 1000ms;
+}
+
+.hide {
+    display: none;
+}   
+

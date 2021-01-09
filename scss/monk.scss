@@ -1,0 +1,38 @@
+.monk {
+    .text {
+        color: #fff;
+        font-family: 'Klavika Rg';
+        font-size: 30px;
+        text-align: center;
+    }
+      
+    .ml2 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+    .stage {
+        display: flex;
+        height: 330px;
+        width: 100%;
+    }
+    .box {
+        align-self: flex-end;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        background-image:url("../img/monk.png");
+        background-repeat: no-repeat;
+        height: 200px;
+        margin: 0 auto 0 auto;
+        transform-origin: bottom;
+        width: 200px; 
+    }
+    .bounce-1 {
+        animation-name: bounce-1;
+        animation-timing-function: linear;
+    }
+    @keyframes bounce-1 {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
+}
