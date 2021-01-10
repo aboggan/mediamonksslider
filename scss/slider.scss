@@ -1,223 +1,209 @@
-
+$klavika-reg : 'Klavika Rg';
 .container {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    .background {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  .background {
+    height: 100%;
+    position: absolute;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+  }
+  .msg {
+    position: absolute;
+    color: #fff;
+    font-family: "Klavika Rg";
+    font-size: 40px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    max-width: 360px;
+    top: 38%;
+    @media only screen and (max-width: 440px) {
+      font-size: 24px;
+      top: 20%;
+      max-width: 100%;
+      text-decoration: none;
+      background-color: rgba(0, 0, 0, 0.5);
+      &.order-0 {
+        background-color: unset;
+      }
+    }
+    &.order-0 {
+      top: 0;
+      margin: 20px;
+      height: 100%;
+      position: relative;
+      max-width: 100%;
+      .top-text {
+        max-width: 350px;
+      }
+      .bottom-text {
+        max-width: 100%;
+        font-size: 11px;
+        text-transform: none;
+        text-decoration: none;
+        bottom: 14%;
+        position: absolute;
+        @media only screen and (max-width: 440px) {
+          bottom: 20%;
+        }
+      }
+    }
+    &.last {
+      right: 5%;
+      top: 0;
+      font-size: 25px;
+      height: 100%;
+      width: 100%;
+      text-decoration: none;
+      text-transform: none;
+      .last-message {
+        position: relative;
         height: 100%;
-        position: absolute;
-        -webkit-transition: 1s;
-        -moz-transition: 1s;
-        -ms-transition: 1s;
-        -o-transition: 1s;
-        transition: 1s; 
-    }
-    .msg {
-        position: absolute;
-        color: #fff;
-        font-family: 'Klavika Rg';
-        font-size: 38px;
-        text-decoration: underline;
-        text-transform: uppercase;
-        max-width: 360px;
-        top: 38%;
-        @media only screen and (max-width: 440px) {
-            font-size: 24px;
-            top: 20%;
-            max-width: 100%;
+        div {
+          position: relative;
+          text-align: right;
+        }
+        a {
+          color: #fff;
+        }
+        .monk-title {
+          top: 3%;
+          text-transform: uppercase;
+          text-decoration: underline;
+          font-size: 40px;
+        }
+        .join-us {
+          top: 40%;
+          font-size: 14px;
+        }
+        .social {
+          top: 50%;
+          font-size: 14px;
+          a {
             text-decoration: none;
-            background-color: rgba(0,0,0,0.5);
-            &.order-0 {
-                background-color: unset;
-            }
-        }
-        &.order-0 {
-            top: 0;
-            margin: 20px;
-            height: 100%;
-            position: relative;
-            max-width: 100%;
-            .top-text {
-                max-width: 350px;
-            }
-            .bottom-text {
-                max-width: 100%;
-                font-size: 11px;
-                text-transform: none;
-                text-decoration: none;
-                bottom: 14%;
-                position: absolute;
-                @media only screen and (max-width: 440px) {
-                    bottom: 20%;
-                }
-            }
-        }
-        &.last {
-            right: 5%;
-            top: 0;
-            font-size: 25px;
-            height: 100%;
-            width: 100%;
-            text-decoration: none;
-            text-transform: none;
-            .last-message {
-                position: relative;
-                height: 100%;
-                div {
-                    position: relative;
-                    text-align: right;
-                }
-                a {
-                    color: #fff;
-                }
-                .monk-title {
-                    top: 3%;
-                    text-transform: uppercase;
-                    text-decoration: underline;
-                    font-size: 40px;
-                }
-                .join-us {
-                    top: 40%;
-                    font-size: 14px;
-                    
-                }
-                .social {
-                    top: 50%;
-                    font-size: 14px;
-                    a {
-                        text-decoration: none;
-                        span {
-                            margin-left: 10px;
-                            padding-right: 10px;
-                        }
-                    }
-                }
-            }
-
-
-        }
-        &.align-left {
-            margin-left: 100px;
-            
-        }
-        &.align-right {
-            right: 5%;
-            text-align: right;
-        }
-        @media only screen and (max-width: 440px) {
-            &.align-left, &.align-right {
-                margin-left: 0 !important;
-                right: unset;
-                text-align: center;
-            }
-        }
-
-    }
-    .navigation {
-        position: absolute;
-        bottom: 2%;
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-left: 20px;
-        @media only screen and (max-width: 440px) {
-            bottom: 60px;
-        }
-        li {
-            border:0.5px dotted #fff;
-            border-left: none;
-            color: #fff;
-            height: 18px;
-            width: 20px;
-            font-size: 10px;
-            font-family: $klavika-reg;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            &:first-child {
-                border-left:0.5px dotted #fff;
-            }
             span {
-                width: 21px;
-                height: 23px;
-                padding-top: 11px;
+              margin-left: 10px;
+              padding-right: 10px;
             }
-            &.selected {
-                span {
-                    display: none;
-                }
-                &::after {
-                    content: "1";
-                    display: inline;
-                    width: 16px;
-                    background-color: white;
+          }
+        }
+      }
+    }
+    &.align-left {
+      margin-left: 100px;
+    }
+    &.align-right {
+      right: 5%;
+      text-align: right;
+    }
+    @media only screen and (max-width: 440px) {
+      &.align-left,
+      &.align-right {
+        margin-left: 0 !important;
+        right: unset;
+        text-align: center;
+      }
+    }
+  }
+  .navigation {
+    position: absolute;
+    bottom: 2%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    @media only screen and (max-width: 440px) {
+      bottom: 60px;
+    }
+    li {
+      border: 0.5px dotted #fff;
+      border-left: none;
+      color: #fff;
+      height: 18px;
+      width: 20px;
+      font-size: 10px;
+      font-family: $klavika-reg;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      &:first-child {
+        border-left: 0.5px dotted #fff;
+      }
+      span {
+        width: 21px;
+        height: 23px;
+        padding-top: 11px;
+      }
+      &.selected {
+        span {
+          display: none;
+        }
+        &::after {
+          content: "1";
+          display: inline;
+          width: 16px;
+          background-color: white;
+        }
+      }
+    }
 
-                }
-            }
-        }
-
-        .steps {
-            font-family: 'Klavika Lt';
-            color: #fff;
-            margin-left: 20px;
-            font-size: 11px;
-        }
+    .steps {
+      font-family: "Klavika Lt";
+      color: #fff;
+      margin-left: 20px;
+      font-size: 11px;
     }
-    .arrow {
-        background-image: url("../img/arrow.png");
-        background-size: contain;
-        position: absolute;
-        opacity: 0.6;
-        height: 38px; 
-        width: 29px;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        top: 40%;
-        @media only screen and (max-width: 440px) {
-            top: 50%;
-        }
-        &.next {
-            right: 2%;
-        }
-        &.prev {
-            left: 14px;
-            -webkit-transform: scaleX(-1);
-            transform: scaleX(-1);
-        }
-        &.show {
-            opacity: 0.6;
-        }
-        &:hover {
-            opacity: 1;
-        }
+  }
+  .arrow {
+    background-image: url("../img/arrow.png");
+    background-size: contain;
+    position: absolute;
+    height: 38px;
+    width: 29px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    top: 40%;
+    @media only screen and (max-width: 440px) {
+      top: 50%;
     }
-    .logo {
-        position: absolute;
-        right: 2%;
-        bottom: 1%;
-        color: #fff;
-        font-size: 4vw;
-        @media only screen and (max-width: 440px) {
-            font-size: 40px;
-            bottom: 10px;
-        }
+    &.next {
+      right: 2%;
     }
-    
+    &.prev {
+      left: 14px;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
+  .logo {
+    position: absolute;
+    right: 2%;
+    bottom: 1%;
+    color: #fff;
+    font-size: 4vw;
+    @media only screen and (max-width: 440px) {
+      font-size: 40px;
+      bottom: 10px;
+    }
+  }
 }
 .hidden {
-    opacity: 0;
-    transition: opacity 1000ms;
+  opacity: 0;
+  transition: opacity 1000ms;
 }
 .show {
-    opacity: 1;
-    transition: opacity 1000ms;
+  opacity: 1;
+  transition: opacity 1000ms;
 }
 
 .hide {
-    display: none;
-}   
-
+  display: none;
+}
