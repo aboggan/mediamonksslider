@@ -10,6 +10,11 @@
     display: inline-block;
     line-height: 1em;
   }
+  .dir-normal  {
+    display: inline-block;
+    line-height: 1em;
+    opacity: 0;
+  }
   .stage {
     display: flex;
     height: 330px;
