@@ -20,12 +20,6 @@ anime.timeline({ loop: false })
         duration: 1500,
         easing: "easeOutExpo",
         delay: 1000
-    }).add({
-        targets: '.dir-normal',
-        translateX: [0, 50],
-        opacity: [0, 1],
-        easing: 'easeInOutSine',
-        direction: 'normal',
     });
   
 
@@ -34,7 +28,16 @@ setTimeout(() => {
     const container = document.querySelector('.container');
 
     hide(monk)
-    monk.classList.add('hide')
-    container.classList.remove('hide')
-    show(container)
+    setTimeout(() => {
+        monk.classList.add('hide')
+    }, 500);
+    
+    setTimeout(() => {
+        container.classList.remove('hide')
+    }, 200);
+
+    setTimeout(() => {
+        show(container)
+    }, 500);
+
 }, 4500);

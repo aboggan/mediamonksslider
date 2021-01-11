@@ -177,10 +177,10 @@ function getMarginForPosition(sliderPosition) {
                 marginLeft = 360;
                 break;
             case 7:
-                marginLeft = 420;
+                marginLeft = 440;
                 break;
             case 8:
-                marginLeft = 420;
+                marginLeft = 440;
                 break;
             case lastPosition:
                 marginLeft = 500;
