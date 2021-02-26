@@ -1,6 +1,6 @@
 # MediaMonks Slider
 
-Es un challenge hecho hecho puramente con javascript y sass
+Es un challenge hecho puramente con javascript y sass
 
 ## Instalación
 No necesita. Checkout del código y abrir el index.html
